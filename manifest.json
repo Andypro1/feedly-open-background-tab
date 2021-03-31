@@ -1,0 +1,11 @@
+{
+    "name": "Feedly Open Background Tab",
+    "description": "Open the currently selected Feedly news item in a background tab for later viewing.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": { "service_worker": "bgtab-worker.js" },
+    "content_scripts": [{
+            "matches": [ "*://*.feedly.com/*" ],
+            "js":      [ "bgtab.js" ]
+    }]
+}
