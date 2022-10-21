@@ -12,10 +12,10 @@ const initRunner = function(e) {
     if(e.altKey || e.ctrlKey)
         return true;
 
-    const link = document.querySelector('.inlineFrame--selected [data-alternate-link^="http"]');
+    const link = document.querySelector('.inlineFrame--selected .entry__title[href^="http"]');
 
     if(link)
-        chrome.runtime.sendMessage({ url: link.getAttribute('data-alternate-link') });
+        chrome.runtime.sendMessage({ url: link.getAttribute('href') });
 };
 
 if(document.readyState === 'complete')
